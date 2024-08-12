@@ -3,16 +3,15 @@
     {
       "identificatorBuy": "2c1b951f356c4680b13ba1c9fc889c47",
       "userName": "João",
-      "totalValue": 31699.98,
+      "totalValue": 31500,
       "termsValue": [
-        5288.33,
-        5288.33,
-        5288.33,
-        5288.33,
-        5288.33,
-        5288.33
+        6300,
+        6300,
+        6300,
+        6300,
+        6300
       ],
-      "paidPix": true,
+      "paidPix": false,
       "id": "1"
     }
   ]
