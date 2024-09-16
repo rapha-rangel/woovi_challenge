@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import {MouseEventHandler, ReactNode} from "react";
 
 interface ButtonProps  {
-  children: ReactNode
-  type: "button" | "submit" 
-  handleClick:  MouseEventHandler<HTMLButtonElement> 
+  children: ReactNode|undefined
+  type: "button" | "submit" |undefined
+  handleClick:  MouseEventHandler<HTMLButtonElement> |undefined
   click: boolean
 }
 

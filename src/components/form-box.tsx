@@ -185,8 +185,9 @@ export function FormBox(){
         setUserInfo={setUserInfo}
       />
       <Button
-        type={"submit"}
-        handleClick={()=>{}}>
+        type={"submit"} 
+        handleClick={undefined} 
+        click={false}>
           <Text>Pagar</Text>
       </Button>
     </Form>

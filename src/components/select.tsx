@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import {arrowDownIcon} from "@/icons";
-import { useValue } from "@/hooks/useValue";
 import { FormatMoney } from "@/utils/format-money";
 import { FormatTerms } from "@/utils/format-terms";
 import { useLoading } from "@/hooks/useLoading";
@@ -110,7 +109,6 @@ export function Select({userInfo, setUserInfo}: SelectProps) {
   const [selectArr, setSelectArr] = useState<number[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [changeSelected, setChangeSelected] = useState(false);
-
 
   useEffect(()=>{
     selectOptions(userInfo?.totalValue, userInfo?.termsValue)

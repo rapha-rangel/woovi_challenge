@@ -4,8 +4,6 @@ import { IoIosArrowUp } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCopy } from "react-icons/fa";
 
-
-
 export const checkIcon = <IconContext.Provider value={{}}>
                             <FaCheck/>
                           </IconContext.Provider> 
