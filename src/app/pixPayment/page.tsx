@@ -2,7 +2,7 @@
 import { PixPaymentMain } from "@/components/pix-payment-main";
 import { useValue } from "@/hooks/useValue";
 import axios from "axios";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { DefaultLayout } from "@/components/default-layout";
