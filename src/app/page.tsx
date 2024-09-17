@@ -6,8 +6,6 @@ import { Main } from "@/components/main";
 import dynamic from "next/dynamic";
 
 const Home=()=> {
-
-
   return (
     <DefaultLayout>
       <Header/>

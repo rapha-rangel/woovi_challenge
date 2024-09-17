@@ -17,7 +17,7 @@ const PixCreditCard= ({searchParams}:{searchParams:{idBuy: string, pix: string}}
 
   const getValues = async()=>{
     try{
-    const response = await axios.get(`http://localhost:3000/users?identificatorBuy=${searchParams.idBuy}`)
+      const response = await axios.get(`http://localhost:3000/users?identificatorBuy=${searchParams.idBuy}`)
       if(response.data[0].paidPix ===true) {
         console.log(response.data[0])
         setUserInfo(response.data[0]);
