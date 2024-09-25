@@ -23,15 +23,10 @@ const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
   const getValues = async(idBuy: string)=>{
     setLoading(true)
       const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${idBuy}`);
-      const hasPaidPix =response.data[0].paidPix;
-      if(hasPaidPix === false){
-        setUserInfo(response.data[0]);
-      } else{
-        router.push(`/pixCreditCard?idBuy=${response.data[0].identificatorBuy}`)
-      }
+      setUserInfo(response.data[0]);
     setLoading(false)
   }
-  
+
   return (
     <>
     {!loading ? 
