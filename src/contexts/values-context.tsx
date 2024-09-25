@@ -11,7 +11,11 @@ interface ValueContextProviderType{
 export const ValueContext = createContext<ValueContextProviderType>({
   userInfo: {
     id:"1",
-    userName:"João"
+    userName:"João",
+    identificatorBuy: '',
+    totalValue: 0,
+    termsValue: [],
+    paidPix: false,
   },
   setUserInfo:(value:UserInfoTypes )=> {}
 })
@@ -23,7 +27,11 @@ interface ProviderProps{
 export function ValueContextProvider({children}: ProviderProps){
   const [userInfo, setUserInfo]= useState<UserInfoTypes>({
     id:"1",
-    userName: "João"
+    userName: "João",
+    identificatorBuy: '',
+    totalValue: 0,
+    termsValue: [],
+    paidPix: false,
   });
 
 

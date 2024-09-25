@@ -113,7 +113,7 @@ const SelectBox = styled.div<SelectTypes>`
   border: 2px solid;
   border-radius: 100%;
   border-color: ${props=> props.$select? "#03D69D": "#E5E5E5"};
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 500ms cubic-bezier(0.23, 1, 0.320, 1);
   svg{
     color:white;
     font-size: 11px;
@@ -130,6 +130,7 @@ export function Card ({values, index, pixText, textRibbon, select, setSelect}: C
     const termsValue = Array(index>=0?index+1: index+2).fill(values.valor);
     const idSearch = await axios.get(`https://json-server-woovi-db.vercel.app/users?userName=${userInfo.userName}`);
     if(idSearch.data.length>0){
+      setSelect(index);
       try{
         await axios.put(`https://json-server-woovi-db.vercel.app/users/${userInfo.id}`,{
           identificatorBuy:idBuyGenerate,
@@ -138,7 +139,6 @@ export function Card ({values, index, pixText, textRibbon, select, setSelect}: C
           termsValue,
           paidPix: false
         });
-        setSelect(index);
         setTimeout(()=>{
           router.push(`/pixPayment?idBuy=${idBuyGenerate}`);
         },1000)
@@ -156,8 +156,8 @@ export function Card ({values, index, pixText, textRibbon, select, setSelect}: C
         {index===1||index===-1?
         <Element
           $index={index}>
-        <p>{pixText}</p>
-      </Element>
+          <p>{pixText}</p>
+        </Element>
       :null
         }
         <div>
