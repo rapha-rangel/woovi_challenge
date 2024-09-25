@@ -16,7 +16,7 @@ const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
   const router = useRouter();
   useEffect(()=>{ 
     getValues();
-  },[userInfo])
+  },[])
   const getValues = async()=>{
     const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${searchParams.idBuy}`);
     console.log(response.data)
