@@ -18,19 +18,12 @@ const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
   useEffect(()=>{ 
     getValues();
   },[])
+  
   const getValues = async()=>{
     const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${searchParams.idBuy}`);
-
-      const updateUser:UserInfoTypes ={
-        id:response.data[0].id,
-        userName: response.data[0].userName,
-        identificatorBuy: response.data[0].identificatorBuy,
-        totalValue: response.data[0].totalValue,
-        termsValue: response.data[0].termsValue,
-        paidPix: response.data[0].paidPix,
-      }
-      setUserInfo(updateUser);
+    await setUserInfo(response.data[0]);
   }
+
   return (
     <DefaultLayout>
       <Header/>
