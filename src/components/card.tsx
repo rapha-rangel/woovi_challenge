@@ -128,10 +128,7 @@ export function Card ({values, index, pixText, textRibbon, select, setSelect}: C
 
   const handleClick= async(index: number, values:{valor: number, total: number})=>{
     const termsValue = Array(index>=0?index+1: index+2).fill(values.valor);
-
-    console.log(termsValue)
     const idSearch = await axios.get(`https://json-server-woovi-db.vercel.app/users?userName=${userInfo.userName}`);
-    console.log(idSearch)
     if(idSearch.data.length>0){
       try{
         await axios.put(`https://json-server-woovi-db.vercel.app/users/${userInfo.id}`,{

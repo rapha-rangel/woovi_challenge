@@ -12,13 +12,14 @@ import { Footer } from "@/components/footer";
 
 
 const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
-  const {setUserInfo}= useValue();
+  const {setUserInfo, userInfo}= useValue();
   const router = useRouter();
   useEffect(()=>{ 
     getValues();
-  },[])
+  },[userInfo])
   const getValues = async()=>{
-    const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${searchParams.idBuy}`)
+    const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${searchParams.idBuy}`);
+    console.log(response.data)
     if(response.data[0].paidPix){
       router.push(`/pixCreditCard?idBuy=${response.data[0].identificatorBuy}`)
     } else{
