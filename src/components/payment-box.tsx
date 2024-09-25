@@ -69,7 +69,7 @@ export function PaymentBox(){
   const handleClick= async()=>{
     
     try {
-      await navigator.clipboard.writeText(`http://localhost:3001/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`);
+      await navigator.clipboard.writeText(`http://localhost:3000/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`);
       setClikedButton(true)
       console.log('Texto copiado para a área de transferência');
     } catch (err) {

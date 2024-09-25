@@ -17,7 +17,7 @@ const PixCreditCard= ({searchParams}:{searchParams:{idBuy: string, pix: string}}
 
   const getValues = async()=>{
     try{
-      const response = await axios.get(`http://localhost:3000/users?identificatorBuy=${searchParams.idBuy}`)
+      const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${searchParams.idBuy}`)
       if(response.data[0].paidPix ===true) {
         console.log(response.data[0])
         setUserInfo(response.data[0]);
@@ -26,7 +26,7 @@ const PixCreditCard= ({searchParams}:{searchParams:{idBuy: string, pix: string}}
         const params={...response.data[0],paidPix: true};
         console.log(params)
         setUserInfo(params);
-        await axios.put(`http://localhost:3000/users/${idUser}`,params);
+        await axios.put(`https://json-server-woovi-db.vercel.app/users/${idUser}`,params);
       }
     }catch(err){
       console.log(err)

@@ -4,7 +4,6 @@ import { PaymentBox } from "./payment-box";
 import { PaymentTerm } from "./payment-term";
 import { FormatMoney } from "@/utils/format-money";
 import {QRCodeSVG} from 'qrcode.react';
-import { UserInfoTypes } from "@/types/user-info";
 import { useValue } from "@/hooks/useValue";
 
 interface ButtonBoxTypes {
@@ -45,7 +44,7 @@ export function PixPaymentMain(){
     <MainBox>
       <Subtitle>{userInfo?.userName}, pague a entrada de R$ {FormatMoney(userInfo?.termsValue ?userInfo?.termsValue[0]: 0 )} pelo Pix</Subtitle>
       <BorderQrCode>
-        <QRCodeSVG value={`http://localhost:3001/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`} size={332}/>
+        <QRCodeSVG value={`/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`} size={332}/>
       </BorderQrCode>
       <PaymentBox/>
       <PaymentTerm/>
