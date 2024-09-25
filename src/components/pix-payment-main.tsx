@@ -39,7 +39,6 @@ const Subtitle = styled.p`
 `
 export function PixPaymentMain(){
   const {userInfo} = useValue();
-  console.log(userInfo)
   return (
     <MainBox>
       <Subtitle>{userInfo?.userName}, pague a entrada de R$ {FormatMoney(userInfo?.termsValue ?userInfo?.termsValue[0]: 0 )} pelo Pix</Subtitle>

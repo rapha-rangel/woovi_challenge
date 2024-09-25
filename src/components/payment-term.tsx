@@ -140,7 +140,6 @@ const IdentifyBox = styled.div`
 export function PaymentTerm(){
   const {userInfo} =useValue();
   const {loading} = useLoading();
-  console.log(userInfo)
   return(
     <PaymentTermBox>
       

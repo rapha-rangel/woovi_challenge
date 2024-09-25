@@ -9,10 +9,6 @@ interface BoxTypes {
   $button: boolean |undefined
 }
 
-interface ButtonTypes {
-  $click: boolean 
-}
-
 const Box = styled.div<BoxTypes>`
   width: 100%;
   display: flex;
