@@ -3,7 +3,7 @@ import { PixPaymentMain } from "@/components/pix-payment-main";
 import { useValue } from "@/hooks/useValue";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import { DefaultLayout } from "@/components/default-layout";
 import { Header } from "@/components/header";
@@ -11,16 +11,19 @@ import { Footer } from "@/components/footer";
 
 
 
-const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
+const PixPayment=()=>{
   const [loading, setLoading] =useState(true);
   const {setUserInfo}= useValue();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const formatIdBuy = searchParams.toString().slice(6,searchParams.toString().length);
 
   useEffect(()=>{ 
-    getValues(searchParams.idBuy);
-  },[searchParams.idBuy]);
+    getValues(formatIdBuy);
+  },[]);
 
   const getValues = async(idBuy: string)=>{
+    console.log()
     const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${idBuy}`);
     console.log(response, idBuy)
     setLoading(true);
