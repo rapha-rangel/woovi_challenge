@@ -16,8 +16,13 @@ const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
   const {setUserInfo}= useValue();
   const router = useRouter();
 
+  useEffect(()=>{ 
+    getValues(searchParams.idBuy);
+  },[searchParams.idBuy]);
+
   const getValues = async(idBuy: string)=>{
     const response = await axios.get(`https://json-server-woovi-db.vercel.app/users?identificatorBuy=${idBuy}`);
+    console.log(response)
     setLoading(true);
     const hasPaidPix =response.data[0].paidPix;
     if(hasPaidPix === false){
@@ -27,11 +32,6 @@ const PixPayment=({searchParams}: {searchParams:{idBuy:string}})=>{
     }
     setLoading(false)
   }
-
-  useEffect(()=>{ 
-    getValues(searchParams.idBuy);
-  },[searchParams.idBuy]);
-
   
   return (
     <>
