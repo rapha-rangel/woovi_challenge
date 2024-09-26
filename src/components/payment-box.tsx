@@ -63,9 +63,8 @@ export function PaymentBox(){
   const [clikedButton, setClikedButton] = useState(false);
 
   const handleClick= async()=>{
-    
     try {
-      await navigator.clipboard.writeText(`http://localhost:3000/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`);
+      await navigator.clipboard.writeText(`https://woovi-challenge-seven.vercel.app/pixCreditCard?idBuy=${userInfo?.identificatorBuy}`);
       setClikedButton(true)
       console.log('Texto copiado para a área de transferência');
     } catch (err) {
